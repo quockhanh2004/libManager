@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <group android:checkableBehavior="single">
+        <item android:title="">
+            <menu>
+                <item
+                    android:id="@+id/qlpm"
+                    android:icon="@drawable/ic_quanlyphieumuon"
+                    android:title="Quản lí phiếu mượn" />
+                <item
+                    android:id="@+id/qltv"
+                    android:icon="@drawable/ic_quanlythanhvien"
+                    android:title="Quản lí thành viên" />
+                <item
+                    android:id="@+id/qls"
+                    android:icon="@drawable/ic_quanlysach"
+                    android:title="Quản lí sách" />
+                <item
+                    android:id="@+id/qlls"
+                    android:icon="@drawable/ic_quanlytheloaisach"
+                    android:title="Quản lí thể loại sách" />
+            </menu>
+        </item>
+    </group>
+    <group android:checkableBehavior="single">
+        <item android:title="">
+            <menu>
+                <item
+                    android:id="@+id/top10"
+                    android:icon="@drawable/ic_top10sach"
+                    android:title="10 sách được mượn nhiều nhất" />
+                <item
+                    android:id="@+id/doanhthu"
+                    android:icon="@drawable/ic_doanhthu"
+                    android:title="Thống kê doanh thu" />
+            </menu>
+        </item>
+    </group>
+
+    <group android:checkableBehavior="single">
+        <item android:title="">
+            <menu>
+                <item
+                    android:id="@+id/changePass"
+                    android:icon="@drawable/ic_key"
+                    android:title="Đổi mật khẩu" />
+                <item
+                    android:id="@+id/changePassOther"
+                    android:icon="@drawable/ic_taikhoankhac"
+                    android:title="Quản lí tài khoản khác" />
+            </menu>
+        </item>
+    </group>
+    <item android:id="@+id/btnLogOut"
+        android:title="Đăng xuất"
+        android:icon="@drawable/ic_logout"/>
+</menu>
