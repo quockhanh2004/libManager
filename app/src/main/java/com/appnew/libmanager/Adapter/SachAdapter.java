@@ -41,7 +41,7 @@ public class SachAdapter extends RecyclerView.Adapter<SachAdapter.ViewHoler> {
     public void onBindViewHolder(@NonNull SachAdapter.ViewHoler holder, int position) {
         holder.txtTenSach.setText(list.get(holder.getAdapterPosition()).getName());
         holder.txtMaSach.setText(list.get(holder.getAdapterPosition()).getMa());
-        holder.txtLoaiSach.setText(list.get(holder.getAdapterPosition()).getMaloaisach());
+        holder.txtLoaiSach.setText(sachDAO.getSach(list.get(holder.getAdapterPosition()).getMaloaisach()).getTenLoaiSach());
         holder.txtTacGia.setText(list.get(holder.getAdapterPosition()).getTacgia());
     }
 

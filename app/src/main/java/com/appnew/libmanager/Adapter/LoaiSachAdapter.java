@@ -105,6 +105,14 @@ public class LoaiSachAdapter extends RecyclerView.Adapter<LoaiSachAdapter.ViewHo
             Toast.makeText(context, "Xóa thất bại", Toast.LENGTH_SHORT).show();
         }
     }
+
+    public void reload(){
+        loaiSachList.clear();
+        loaiSachList.addAll(loaiSachDAO.getList());
+        sachList.clear();
+        sachList.addAll(sachDAO.getList());
+        notifyDataSetChanged();
+    }
     private void showEditDialog(LoaiSach loaiSach) {
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
         LayoutInflater inflater = ((Activity) context).getLayoutInflater();

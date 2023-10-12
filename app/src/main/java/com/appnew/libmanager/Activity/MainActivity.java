@@ -140,7 +140,6 @@ public class MainActivity extends AppCompatActivity {
         actionBar.setTitle("Quản lí phiếu mượn");
 
         mainBinding.navigationView.setNavigationItemSelectedListener(item -> {
-
             if (item.getItemId() == R.id.qlpm) {
 
                 mainBinding.rcl.setAdapter(phieuMuonAdapter);
@@ -160,7 +159,7 @@ public class MainActivity extends AppCompatActivity {
 
                 mainBinding.rcl.setAdapter(loaiSachAdapter);
                 mainBinding.floating.setVisibility(View.VISIBLE);
-                loaiSachAdapter.notifyDataSetChanged();
+                loaiSachAdapter.reload();
             } else if (item.getItemId() == R.id.top10) {
                 mainBinding.rcl.setAdapter(top10Adapter);
 
@@ -184,7 +183,19 @@ public class MainActivity extends AppCompatActivity {
             actionBar.setTitle(item.getTitle());
             return false;
         });
-
+        mainBinding.rcl.addOnScrollListener(new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrolled(@NonNull RecyclerView recyclerView, int dx, int dy) {
+                super.onScrolled(recyclerView, dx, dy);
+                if (dy > 0){
+                    mainBinding.floating.setVisibility(View.GONE);
+                }
+                if (dy < 0) {
+                    if (!actionBar.getTitle().equals("10 sách được mượn nhiều nhất"))
+                    mainBinding.floating.setVisibility(View.VISIBLE);
+                }
+            }
+        });
         mainBinding.floating.setOnClickListener(view -> {
             showAddDialog((Context) this, (String) actionBar.getTitle());
         });
